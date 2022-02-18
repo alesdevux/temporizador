@@ -99,3 +99,11 @@ defaultSecond.addEventListener('click', () => {
   originalMinutes = secondMinutes;
   originalValues();
 });
+
+timerCustom.addEventListener('keypress', () => {
+  minutes = timerCustom.value.slice(0,2);
+  seconds = timerCustom.value.slice(3);
+
+  domMin.textContent = minutes;
+  domSec.textContent = seconds;
+})

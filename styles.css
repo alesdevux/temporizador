@@ -24,10 +24,12 @@ input {
 input {
   background-color: #f5f5f5;
   width: 100%;
+  cursor: text;
 }
 
 input:focus {
-  outline-color: #FFC107;
+  outline: none;
+  background-color: #FFC107;
 }
 
 .timer {
