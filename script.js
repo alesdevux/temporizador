@@ -25,8 +25,7 @@ function startTimer(min, sec) {
         clearInterval(interval);
         start.disabled = false;
 
-        minutes = minutes;
-        seconds = seconds;
+        originalValues();
         start.textContent = 'Start';
         return;
       }
@@ -51,8 +50,7 @@ function startTimer(min, sec) {
       pause.disabled = true;
       reset.disabled = true;
       clearInterval(interval);
-      domMin.textContent = twoNumbers(originalMinutes);
-      domSec.textContent = twoNumbers(originalSeconds);
+      originalValues();
       start.textContent = 'Start';
     });
   }, 1000);
@@ -64,6 +62,14 @@ function twoNumbers(num) {
   } else {
     return num;
   }
+}
+
+function originalValues() {
+  minutes = originalMinutes;
+  seconds = originalSeconds;
+
+  domMin.textContent = twoNumbers(originalMinutes);
+  domSec.textContent = twoNumbers(originalSeconds);
 }
 
 start.addEventListener('click', () => {
