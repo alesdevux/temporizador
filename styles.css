@@ -29,3 +29,11 @@ button {
   align-items: center;
   gap: 10px;
 }
+
+.timer__controls-start:hover {
+  background-color: #10B981;
+}
+
+.timer__controls-pause:hover {
+  background-color: #FFC107;
+}
