@@ -100,7 +100,7 @@ defaultSecond.addEventListener('click', () => {
   originalValues();
 });
 
-timerCustom.addEventListener('keypress', () => {
+timerCustom.addEventListener('change', () => {
   minutes = timerCustom.value.slice(0,2);
   seconds = timerCustom.value.slice(3);
 
