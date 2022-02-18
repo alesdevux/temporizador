@@ -18,6 +18,7 @@ domMin.textContent = twoNumbers(originalMinutes);
 domSec.textContent = twoNumbers(originalSeconds);
 
 function startTimer(min, sec) {
+  start.textContent = 'Continue';
   let interval = setInterval(() => {
     if (sec === 0) {
       if (min === 0) {
@@ -26,6 +27,7 @@ function startTimer(min, sec) {
 
         minutes = minutes;
         seconds = seconds;
+        start.textContent = 'Start';
         return;
       }
       min--;
@@ -51,6 +53,7 @@ function startTimer(min, sec) {
       clearInterval(interval);
       domMin.textContent = twoNumbers(originalMinutes);
       domSec.textContent = twoNumbers(originalSeconds);
+      start.textContent = 'Start';
     });
   }, 1000);
 }
