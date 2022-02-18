@@ -18,8 +18,6 @@ function startTimer(min, sec) {
     if (sec === 0) {
       if (min === 0) {
         clearInterval(interval);
-        start.disabled = false;
-
         originalValues();
         start.textContent = 'Start';
         return;
