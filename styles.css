@@ -13,14 +13,29 @@ body {
   justify-items: center;
 }
 
-button {
+button,
+input {
   cursor: pointer;
   padding: 8px 16px;
   border: none;
+  width: 100%;
+}
+
+input {
+  background-color: #f5f5f5;
+  width: 100%;
+}
+
+input:focus {
+  outline-color: #FFC107;
 }
 
 .timer {
   max-width: 250px;
+}
+
+.timer__default-custom {
+  text-align: center;
 }
 
 .timer__time {
@@ -30,11 +45,11 @@ button {
   justify-content: center;
 }
 
-.timer__controls {
+.timer__controls,
+.timer__default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
 }
 
 .timer__controls-start:hover {

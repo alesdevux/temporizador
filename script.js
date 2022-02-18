@@ -5,10 +5,20 @@ const start = document.getElementById('start');
 const pause = document.getElementById('pause');
 const reset = document.getElementById('reset');
 
-let originalMinutes = 25;
+const defaultFirst = document.getElementById('default-first');
+const defaultSecond = document.getElementById('default-second');
+const timerCustom = document.getElementById('timer-custom');
+
+let originalMinutes = 30;
 let originalSeconds = 0;
+let firstMinutes = 25;
+let secondMinutes = 5;
 let minutes;
 let seconds;
+
+defaultFirst.textContent = `${twoNumbers(firstMinutes)}:00`;
+defaultSecond.textContent = `${twoNumbers(secondMinutes)}:00`;
+timerCustom.value = `${twoNumbers(originalMinutes)}:${twoNumbers(originalSeconds)}`;
 
 originalValues();
 
@@ -39,9 +49,6 @@ function startTimer(min, sec) {
     });
 
     reset.addEventListener('click', () => {
-      start.disabled = false;
-      pause.disabled = true;
-      reset.disabled = true;
       clearInterval(interval);
       originalValues();
       start.textContent = 'Start';
@@ -66,11 +73,29 @@ function originalValues() {
 
   domMin.textContent = twoNumbers(originalMinutes);
   domSec.textContent = twoNumbers(originalSeconds);
+
+  defaultFirst.style.display = 'inline-block';
+  defaultSecond.style.display = 'inline-block';
+  timerCustom.style.display = 'block';
 }
 
 start.addEventListener('click', () => {
   start.disabled = true;
   pause.disabled = false;
   reset.disabled = false;
+
+  defaultFirst.style.display = 'none';
+  defaultSecond.style.display = 'none';
+  timerCustom.style.display = 'none';
   startTimer(minutes, seconds);
+});
+
+defaultFirst.addEventListener('click', () => {
+  originalMinutes = firstMinutes;
+  originalValues();
+});
+
+defaultSecond.addEventListener('click', () => {
+  originalMinutes = secondMinutes;
+  originalValues();
 });
