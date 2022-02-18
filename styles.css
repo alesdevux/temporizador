@@ -25,6 +25,15 @@ input {
   width: 100%;
 }
 
+button:disabled,
+input:disabled {
+  cursor: default;
+}
+
+button:disabled:hover {
+  background-color: #f4f4f6;
+}
+
 input {
   background-color: #f5f5f5;
   width: 100%;
@@ -34,6 +43,10 @@ input {
 input:focus {
   outline: none;
   background-color: #FFC107;
+}
+
+input:disabled:focus {
+  background-color: #f5f5f5;
 }
 
 .timer {
@@ -50,6 +63,7 @@ input:focus {
   font-weight: bold;
   display: flex;
   justify-content: center;
+  cursor: default;
 }
 
 .timer__controls,
