@@ -74,9 +74,9 @@ function originalValues() {
   domMin.textContent = twoNumbers(originalMinutes);
   domSec.textContent = twoNumbers(originalSeconds);
 
-  defaultFirst.style.display = 'inline-block';
-  defaultSecond.style.display = 'inline-block';
-  timerCustom.style.display = 'block';
+  defaultFirst.disabled = false;
+  defaultSecond.disabled = false;
+  timerCustom.disabled = false;
 }
 
 start.addEventListener('click', () => {
@@ -84,9 +84,9 @@ start.addEventListener('click', () => {
   pause.disabled = false;
   reset.disabled = false;
 
-  defaultFirst.style.display = 'none';
-  defaultSecond.style.display = 'none';
-  timerCustom.style.display = 'none';
+  defaultFirst.disabled = true;
+  defaultSecond.disabled = true;
+  timerCustom.disabled = true;
   startTimer(minutes, seconds);
 });
 

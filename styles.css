@@ -46,6 +46,8 @@ input:focus {
   font-weight: bold;
   display: flex;
   justify-content: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .timer__controls,
