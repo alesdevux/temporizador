@@ -101,9 +101,13 @@ defaultSecond.addEventListener('click', () => {
 });
 
 timerCustom.addEventListener('change', () => {
-  minutes = timerCustom.value.slice(0,2);
-  seconds = timerCustom.value.slice(3);
+  if (timerCustom.value == false) {
+    originalValues();
+  } else {
+    minutes = timerCustom.value.slice(0,2);
+    seconds = timerCustom.value.slice(3);
 
-  domMin.textContent = minutes;
-  domSec.textContent = seconds;
+    domMin.textContent = minutes;
+    domSec.textContent = seconds;
+  }
 })
