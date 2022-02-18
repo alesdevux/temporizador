@@ -7,15 +7,10 @@ const reset = document.getElementById('reset');
 
 let originalMinutes = 25;
 let originalSeconds = 0;
-let minutes = originalMinutes;
-let seconds = originalSeconds;
+let minutes;
+let seconds;
 
-start.disabled = false;
-pause.disabled = true;
-reset.disabled = true;
-
-domMin.textContent = twoNumbers(originalMinutes);
-domSec.textContent = twoNumbers(originalSeconds);
+originalValues();
 
 function startTimer(min, sec) {
   start.textContent = 'Continue';
@@ -65,6 +60,9 @@ function twoNumbers(num) {
 }
 
 function originalValues() {
+  start.disabled = false;
+  pause.disabled = true;
+  reset.disabled = true;
   minutes = originalMinutes;
   seconds = originalSeconds;
 
