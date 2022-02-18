@@ -1,0 +1,2 @@
+let stateTimer = false;
+

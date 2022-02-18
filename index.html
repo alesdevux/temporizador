@@ -5,10 +5,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Temporizador</title>
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- styles -->
   <link rel="stylesheet" href="styles.css">
+  <!-- scripts -->
   <script defer src="script.js"></script>
 </head>
 <body>
-
+  <div class="timer">
+    <div class="timer__time">
+      <!-- <span class="timer__time-hours">00</span>
+      <span class="timer__time-colon">:</span> -->
+      <span class="timer__time-minutes">00</span>
+      <span class="timer__time-colon">:</span>
+      <span class="timer__time-seconds">00</span>
+    </div>
+    <div class="timer__controls">
+      <button class="timer__controls-start" id="start">Start</button>
+      <button class="timer__controls-pause" id="pause">Pause</button>
+      <button class="timer__controls-reset" id="reset">Reset</button>
+    </div>
+  </div>
 </body>
 </html>
