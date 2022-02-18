@@ -100,7 +100,10 @@ defaultSecond.addEventListener('click', () => {
   originalValues();
 });
 
-timerCustom.addEventListener('change', () => {
+timerCustom.addEventListener('change', () => {useTimerCustom()});
+timerCustom.addEventListener('keypress', () => {useTimerCustom()});
+
+function useTimerCustom () {
   if (timerCustom.value == false) {
     originalValues();
   } else {
@@ -114,4 +117,4 @@ timerCustom.addEventListener('change', () => {
     domMin.textContent = twoNumbers(minutes);
     domSec.textContent = seconds;
   }
-})
+}
