@@ -105,9 +105,13 @@ timerCustom.addEventListener('change', () => {
     originalValues();
   } else {
     minutes = timerCustom.value.slice(0,2);
+    if (minutes < 10) {
+      minutes = timerCustom.value.slice(1,2);
+    }
+
     seconds = timerCustom.value.slice(3);
 
-    domMin.textContent = minutes;
+    domMin.textContent = twoNumbers(minutes);
     domSec.textContent = seconds;
   }
 })
