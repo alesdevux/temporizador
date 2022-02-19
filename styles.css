@@ -15,6 +15,30 @@ body {
   width: 100vw;
   align-items: center;
   justify-items: center;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  background: linear-gradient(120deg, #f6d365, #f6d365 50%, #fda085 50%, #fda085);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 110%;
+  background: linear-gradient(210deg, #10B981, #10B981 50%, transparent 50%, transparent);
+  z-index: -1;
+  animation: bg 6s ease-in-out infinite;
 }
 
 button,
@@ -51,6 +75,8 @@ input:disabled:focus {
 
 .timer {
   width: 280px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
 }
 
 .timer__default-custom {
@@ -79,4 +105,16 @@ input:disabled:focus {
 
 .timer__controls-pause:hover {
   background-color: #FFC107;
+}
+
+@keyframes bg {
+  0% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
 }
