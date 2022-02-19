@@ -13,9 +13,9 @@
   --white-soft: rgba(255, 255, 255, 0.35);
   --white-light: rgba(255, 255, 255, 0.5);
   --white: rgba(255, 255, 255, 0.8);
-  --first-color: #10B981;
-  --second-color: #F6D365;
-  --third-color: #fda085;
+  --black: #32292F;
+  --first-color: #35A7FF;
+  --second-color: #44CF6C;
 }
 
 body {
@@ -25,29 +25,8 @@ body {
   align-items: center;
   justify-items: center;
   overflow: hidden;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 110%;
-  height: 110%;
-  background: linear-gradient(120deg, var(--second-color), var(--second-color) 50%, var(--third-color) 50%, var(--third-color));
-  z-index: -1;
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 110%;
-  height: 110%;
-  background: linear-gradient(210deg, var(--first-color), var(--first-color) 50%, transparent 50%, transparent);
-  z-index: -1;
-  animation: bg 6s ease-in-out infinite;
+  color: var(--black);
+  background: linear-gradient(120deg, var(--first-color), var(--first-color) 25%, var(--second-color) 75%, var(--second-color));
 }
 
 button,
@@ -99,6 +78,12 @@ input:disabled:focus {
   box-shadow: 5px 5px 30px var(--white-light);
   border-radius: 10px;
   overflow: hidden;
+  transition: all 0.6s ease-in-out;
+}
+
+.timer:hover {
+  box-shadow: 5px 5px 30px var(--white-soft);
+  margin-bottom: 15px;
 }
 
 .timer__default-custom {
@@ -121,16 +106,4 @@ input:disabled:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-@keyframes bg {
-  0% {
-    transform: translateY(-20px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-20px);
-  }
 }
