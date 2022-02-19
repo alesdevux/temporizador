@@ -87,6 +87,10 @@ start.addEventListener('click', () => {
   defaultFirst.disabled = true;
   defaultSecond.disabled = true;
   timerCustom.disabled = true;
+
+  minutes = parseInt(minutes);
+  seconds = parseInt(seconds);
+  
   startTimer(minutes, seconds);
 });
 
@@ -113,8 +117,14 @@ function useTimerCustom () {
     }
 
     seconds = timerCustom.value.slice(3);
+    if (seconds < 10) {
+      seconds = timerCustom.value.slice(4);
+    }
 
-    domMin.textContent = twoNumbers(minutes);
+    minutes = twoNumbers(minutes);
+    seconds = twoNumbers(seconds);
+
+    domMin.textContent = minutes;
     domSec.textContent = seconds;
   }
 }
