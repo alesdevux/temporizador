@@ -9,6 +9,15 @@
   display: none;
 }
 
+:root {
+  --white-soft: rgba(255, 255, 255, 0.35);
+  --white-light: rgba(255, 255, 255, 0.5);
+  --white: rgba(255, 255, 255, 0.8);
+  --first-color: #10B981;
+  --second-color: #F6D365;
+  --third-color: #fda085;
+}
+
 body {
   display: grid;
   height: 100vh;
@@ -25,7 +34,7 @@ body::before {
   left: 0;
   width: 110%;
   height: 110%;
-  background: linear-gradient(120deg, #f6d365, #f6d365 50%, #fda085 50%, #fda085);
+  background: linear-gradient(120deg, var(--second-color), var(--second-color) 50%, var(--third-color) 50%, var(--third-color));
   z-index: -1;
 }
 
@@ -36,7 +45,7 @@ body::after {
   left: 0;
   width: 110%;
   height: 110%;
-  background: linear-gradient(210deg, #10B981, #10B981 50%, transparent 50%, transparent);
+  background: linear-gradient(210deg, var(--first-color), var(--first-color) 50%, transparent 50%, transparent);
   z-index: -1;
   animation: bg 6s ease-in-out infinite;
 }
@@ -47,6 +56,14 @@ input {
   padding: 8px 16px;
   border: none;
   width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid var(--white-soft);
+  border-right: 1px solid var(--white-soft);
+}
+
+button:hover,
+input:hover {
+  background-color: var(--white-light);
 }
 
 button:disabled,
@@ -54,29 +71,34 @@ input:disabled {
   cursor: default;
 }
 
-button:disabled:hover {
-  background-color: #f4f4f6;
+button:disabled:hover,
+input:disabled:hover {
+  background-color: inherit;
 }
 
 input {
-  background-color: #f5f5f5;
   width: 100%;
   cursor: text;
 }
 
 input:focus {
   outline: none;
-  background-color: #FFC107;
+  background-color: var(--white);
 }
 
 input:disabled:focus {
-  background-color: #f5f5f5;
+  background-color: inherit;
 }
 
 .timer {
   width: 280px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--white-soft);
   backdrop-filter: blur(20px);
+  border-top: 1px solid var(--white-soft);
+  border-left: 1px solid var(--white-soft);
+  box-shadow: 5px 5px 30px var(--white-light);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .timer__default-custom {
@@ -90,6 +112,8 @@ input:disabled:focus {
   display: flex;
   justify-content: center;
   cursor: default;
+  border-bottom: 1px solid var(--white-soft);
+  border-right: 1px solid var(--white-soft);
 }
 
 .timer__controls,
@@ -97,14 +121,6 @@ input:disabled:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.timer__controls-start:hover {
-  background-color: #10B981;
-}
-
-.timer__controls-pause:hover {
-  background-color: #FFC107;
 }
 
 @keyframes bg {
