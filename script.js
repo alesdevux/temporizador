@@ -33,7 +33,7 @@ function startTimer(min, sec) {
         return;
       }
       min--;
-      sec = 59;
+      sec = 60;
     }
     sec--;
     domMin.textContent = twoNumbers(min);
