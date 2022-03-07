@@ -38,6 +38,7 @@ function startTimer(min, sec) {
     sec--;
     domMin.textContent = twoNumbers(min);
     domSec.textContent = twoNumbers(sec);
+    document.title = `${twoNumbers(min)}:${twoNumbers(sec)}`;
 
     pause.addEventListener('click', () => {
       start.disabled = false;
@@ -52,6 +53,7 @@ function startTimer(min, sec) {
       clearInterval(interval);
       originalValues();
       start.textContent = 'Start';
+      document.title = `${twoNumbers(originalMinutes)}:${twoNumbers(originalSeconds)}`;
     });
   }, 1000);
 }
@@ -96,11 +98,13 @@ start.addEventListener('click', () => {
 
 defaultFirst.addEventListener('click', () => {
   originalMinutes = firstMinutes;
+  document.title = `${twoNumbers(originalMinutes)}:${twoNumbers(originalSeconds)}`;
   originalValues();
 });
 
 defaultSecond.addEventListener('click', () => {
   originalMinutes = secondMinutes;
+  document.title = `${twoNumbers(originalMinutes)}:${twoNumbers(originalSeconds)}`;
   originalValues();
 });
 
@@ -126,5 +130,6 @@ function useTimerCustom () {
 
     domMin.textContent = minutes;
     domSec.textContent = seconds;
+    document.title = `${minutes}:${seconds}`;
   }
 }
